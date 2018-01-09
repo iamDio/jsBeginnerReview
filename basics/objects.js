@@ -18,8 +18,15 @@ const arrOfObj = [
 	},
 	{
 		questions: 'what are you doing?',
-		answers: ['eating', 'playing music', 'fuckkkk']
+		answers: ['eating', 'playing music', 'eating and playing music']
 	}
 ];
 
-console.log(arrOfObj[1].questions);
+for (let i = 0; i < arrOfObj.length; i++) {
+	console.log(arrOfObj[i].questions, arrOfObj[i].answers);
+}
+
+/*arrOfObj.forEach(function(list) {
+	console.log(list.questions, list.answers);
+});
+*/
