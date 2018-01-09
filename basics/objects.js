@@ -21,7 +21,7 @@ testObj.fullName();
 
 const arrOfObj = [
 	{
-		questions: 'what is your purpose?',
+		questions: 'what is your favorite thing to do?',
 		answers: ['to eat', 'to drink', 'to live']
 	},
 	{
@@ -29,6 +29,7 @@ const arrOfObj = [
 		answers: ['eating', 'playing music', 'eating and playing music']
 	}
 ];
+d;
 
 for (let i = 0; i < arrOfObj.length; i++) {
 	console.log(arrOfObj[i].questions, arrOfObj[i].answers);
