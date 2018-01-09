@@ -1,3 +1,11 @@
+//array
+const nums = [100, 54, 49, 288];
+
+for (let i = 0; i < nums.length; i++) {
+	console.log(i);
+	console.log(nums[i]);
+}
+
 //An object is a collection of related data with a properties (variables of an object), and methods (Functions of an object)
 
 const testObj = {
