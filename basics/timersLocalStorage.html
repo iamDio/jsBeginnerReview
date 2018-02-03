@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>timers and localStorage example todo</title>
+</head>
+<body>
+	<div class="main">
+		<h1>TIMER AND TODO APP</h1>
+		<div class="todo">
+			<h2>TO DO </h2>
+				<input id="text" type="text" name="item" placeholder="Enter new item"/>
+				<input id="submitItem" type="submit" name="submitItem"/>
+				<h5 id="newItem"></h5>
+		</div>
+		<div class="timer">
+			<h2>TIMER</h2>
+				<input id="timer" type="text" name="timer" placeholder="enter new timer in seconds" />
+				<input type="submit" name="submitTimer">
+		</div>
+	</div>
+	<script type="text/javascript">
+			const todoSubmit = document.querySelector('#submitItem')
+			todoSubmit.addEventListener('click', function(e){
+				console.log(e)
+				const todoInput= document.querySelector('#text').value;
+				console.log(todoInput)
+				const newItem= document.querySelector('#newItem');
+				const checkbox= document.innerHTML= '<input type="checkbox">'
+				const space= document.createElement('br');
+				newItem.append(todoInput,checkbox *2, space);
+		})
+			const createTimer= function(){
+				const timerInput = document.querySelector('#timer')
+				
+			}();
+	</script>
+</body>
+</html>

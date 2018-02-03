@@ -59,21 +59,14 @@ const displayBestSellers = (bookRank, bookTitle, isbns, bookInfo) => {
 	const description = $('<p>').text(bookInfo.description);
 	const isbn = $('<h4>').text(isbns);
 	const hr = $('<hr>');
-	//here we're creating an image tag with a placeholder image in case the cover of the book is not available from the google api
-	// note that we're using the isbns of each book to associate each image tag with one book. This allows the images that we pull from the google api to be associated with the right book
-	const image = $(
-		`<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/387928/book%20placeholder.png" class="book-cover" id="cover-${isbns}">`
-	);
 	// here we're simply aapending all of the information to the page. Notice how storing each in a variable makes it easier to reuse later.
-	$('#main').append(image, rank, title, author, description, isbn, hr);
-	getBookCover(isbns);
-
+	$('#main').append(rank, title, author, description, isbn, hr);
 	// here we'recalling the getBookCover function which we will use to interact with the google books api.
 	// the google books api requires an isbn to identify each book, therefore we're passing the isnbs variable through by adding it as a parameter, as we've done throughout this example.
+	getBookCover(isbns);
 };
-//this function will pull data from the books api
-const getBookCover = isbns => {
-	//i'm using this console log to make sure that the isbn was succesfully passed down to this function
+
+function getBookCover(isbns) {
 	console.log(isbns);
 	const api_key = 'AIzaSyDLV4A-Go0DkpGmeUDWRHOexpLnIUP28v4';
 	const queryURL = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbns + '&key=' + api_key;
@@ -82,12 +75,9 @@ const getBookCover = isbns => {
 		method: 'GET'
 	}).done(function(response) {
 		console.log(response);
-		//here we're simply grabbing the image url from the response object
 		const image = response.items[0].volumeInfo.imageLinks.smallThumbnail;
-		//here we're selecting the #cover id which we created on line 65 const image = $(.....) in the displayBestSellers function
-		//we're updating the isbns value of that id to ensure that the right image is displayed for the right book
-		//we're updating the src attribute of that image tag with the link for the smallThumbnail from the response object
-		$('#cover-' + isbns).attr('src', image);
+		const img = $('<img src=' + image + '>');
+		$('#main').append(img);
 		console.log(image);
 	});
-};
+}
