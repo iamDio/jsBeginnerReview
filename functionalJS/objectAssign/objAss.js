@@ -14,7 +14,7 @@ let taco = { food: 'taco' };
 let burrito = { food: 'burrito' };
 
 let tacoCopy = Object.assign({}, burrito);
-console.log(`tacosss ${tacoCopy}`);
+
 Object.assign(burrito, taco, tacoCopy);
 
 console.log('taco', taco);

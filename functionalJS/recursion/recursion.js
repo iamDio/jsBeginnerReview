@@ -10,7 +10,6 @@ let countDownFrom = num => {
 	//without this condition the function will just call itself forever, and you will get an error "max call stack limit exceeded"
 	//the call stack is the stack of function calls that your code has made.
 	if (num === 0) return;
-
 	// this is the recursive part of this function. We're calling countDownFrom inside the definition itself, and it will subtract 1 from num till it hits 0 then stop
 	countDownFrom(num - 1);
 };
@@ -43,6 +42,7 @@ console.log(JSON.stringify(makeTree(categories, null), null, 2));
 	animals: {
 		mammals: {
 			dogs: {
+				//these are null because they don't have a sub category 
 				golden retriever:null
 				labrador: null
 			},
