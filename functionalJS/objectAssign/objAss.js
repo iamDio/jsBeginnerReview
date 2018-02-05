@@ -19,3 +19,13 @@ Object.assign(burrito, taco, tacoCopy);
 
 console.log('taco', taco);
 console.log('burrito', burrito);
+
+let pulledPork = { food: 'pulledPork', type: 'meat' };
+let carnitas = { food: 'mexican', type: 'spicy' };
+
+let meatCopy = Object.assign({}, pulledPork);
+
+Object.assign(pulledPork, carnitas, meatCopy);
+
+console.log('pulledPork', pulledPork);
+console.log('carnitas', carnitas);
