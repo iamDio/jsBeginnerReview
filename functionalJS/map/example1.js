@@ -37,8 +37,23 @@ let colors = [
 // }
 // console.log(names)
 
-//using map
+//map includes all items in the array, but expects callback to return a transformed version of the array that will  be stored in a new array
+    // let names = colors.map(function(col){
+        //return col.color
+        //)}  
+
+//using map with an arrow function and an inplicit return . 
+//When using arrow functions, if your function has only 1 line and 1 argument, it can be shortened to look like it does below 
 let names = colors.map(col =>  col.color)
-    //map includes all items in the array, but expects callback to return a transformed version of the array that will  be stored in a new array
+//as opposed to: 
+    // let names = colors.map((col) =>{  
+        //return col.color
+        //)}
+    
+//which is also the same as:
+    // let names = colors.map(function(col){
+        //return col.color
+        //)}  
+
 
 console.log(names)
