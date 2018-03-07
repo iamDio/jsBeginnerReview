@@ -42,13 +42,3 @@ const productList = [
     {type:'drink', product:'Water', price:4, quantity:100},
     {type:'meat', product:'Chicken', price:3, quantity:15},
 ]
-
-const foodType = productList.reduce((startingValue,newValue)=> {
-    console.log(startingValue,newValue)
-    if(productList.type === 'drink'){
-        return startingValue.product
-    }
-
-}) 
-
-console.log(foodType)
