@@ -1,7 +1,7 @@
+//reduce allows us to run a  callback function against every item in an array and reduce it to a single value of any type
 //reduce is a list transformation higher order function
 //its not as limited as map filter find and reject which have specific use cases 
 //reduce allows you to define exactly what you want it to do
-
 //EXAMPLE 1: 
 
 const orders = [
