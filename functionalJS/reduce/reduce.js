@@ -34,11 +34,21 @@ const totalAmount = orders.reduce((sum,order)=>{
 console.log(totalAmount)
 
 //EXAMPLE 2:
-
+// in this example we will return duplicate items in our array of objects below
 const productList = [
     {type:'drink', product:'Tea', price:4, quantity:100},
-    {type:'veggies', product:'Broccoli', price:5, quantity:50},
+    {type:'drink', product:'Tea', price:4, quantity:100},
     {type:'meat', product:'Steak', price:25, quantity:10},
     {type:'drink', product:'Water', price:4, quantity:100},
-    {type:'meat', product:'Chicken', price:3, quantity:15},
+    {type:'meat', product:'Chicken', price:3, quantity:15}
 ]
+
+let result = productList.reduce((accumulator, current) =>{
+    const length = accumulator.length
+    if (length == 0 || accumulator[length -1] ==current) {
+        accumulator.push(current);
+}
+return accumulator;
+}, []);
+
+console.log(result);
