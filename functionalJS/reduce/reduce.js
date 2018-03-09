@@ -52,3 +52,15 @@ return accumulator;
 }, []);
 
 console.log(result);
+
+
+//EXAMPLE 4: TALLY 
+const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig' ];
+
+const count = fruitBasket.reduce( (tally,fruit)=>{
+    tally[fruit] = (tally[fruit]||0)+1;
+    return tally;
+    //note that our initial value is an empty object not an empty array. 
+}, [] )
+
+console.log(count)
