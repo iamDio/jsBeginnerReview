@@ -58,7 +58,6 @@ console.log(result);
 const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig' ];
 
 const count = fruitBasket.reduce( (tally,fruit)=>{
-    //since we're returning an object, we're storing key-value pairs in the total
     tally[fruit] = (tally[fruit]||0)+1;
     return tally;
 }, {} )
