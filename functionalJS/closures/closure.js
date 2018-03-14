@@ -25,3 +25,15 @@ function makeFunc() {
 const myFunc = makeFunc();
 myFunc();
 
+
+//BASIC EXAMPLE 2
+
+function addOuter() {
+    let number = 14;
+    function addInner() {
+    let num = 10;
+    }
+    console.log( number+num);
+}
+
+addOuter();
